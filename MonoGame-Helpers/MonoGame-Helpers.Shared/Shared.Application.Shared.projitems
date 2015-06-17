@@ -16,6 +16,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)clases\AutomatedSprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)clases\Camera.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)clases\Layer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)clases\SimpleSprite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)clases\Sprite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)clases\UserControlledSprite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game1.cs" />
