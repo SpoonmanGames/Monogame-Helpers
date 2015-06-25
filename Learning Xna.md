@@ -5,26 +5,18 @@
 ** Será necesario Particle System ?? (Learning XNA- Pág 299)
 
 
-EXTRAS
-=======
+# EXTRAS
 
 Game.Window.ClientBounds
 	Accede a los limites de la pantall
 usar 'enum' para estados:
 	enum GameState { Start, InGame, GameOver };
 
-
-
-
-
-
-
 # Helpers para MonoGame
 
 Lista de helpers desde Learning XNA 4.0
 
-Consideración 1: Extensiones
-============================
+# Consideración 1: Extensiones
 
 Ejemplo de extensión
 
@@ -37,13 +29,11 @@ public static class PointExt
 }
 
 
-Consideración 2: Crear algo que fácilmente permita crear animaciones
-====================================================================
+# Consideración 2: Crear algo que fácilmente permita crear animaciones
 
 // TODO
 
-Consideracion 3: Cambiar el framerate del juego
-================================================
+# Consideracion 3: Cambiar el framerate del juego
 
 En el constructor de Game1
 
@@ -51,15 +41,13 @@ TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 50);
 
 Este ejemplo lo pone a 50 milisegundos = 20 fps
 
-Consideracion 4: Detectar si el juego anda lento
-================================================
+# Consideracion 4: Detectar si el juego anda lento
 
 GameTime tiene la propiedad IsRunningSlowly
 
 //TODO: Buscar una forma de detectar esto y avisar al usuario del problema.
 
-Consideración 5: Animation Frame configurable por animación
-=============================================================
+# Consideración 5: Animation Frame configurable por animación
 
 int timeSinceLastFrame = 0;
 int millisecondsPerFrame = 50; // equivale a 20fps
@@ -80,8 +68,7 @@ if (timeSinceLastFrame > millisecondsPerFrame){
 	}
 }
 
-Consideración 6: Sistema de colisión simple
-============================================
+# Consideración 6: Sistema de colisión simple
 
 protected bool Collide( )
 {
@@ -96,14 +83,11 @@ protected bool Collide( )
 Tener en cuenta portabilidad
 
 
-Consideración 8: Lluvia
-=========================
+# Consideración 8: Lluvia
 
 This is actually really simple. The rain is just a plane with a uv panning texture. 
 
-
-Consideración 9: GameComponents
-===============================
+# Consideración 9: GameComponents
 
 Permite que los metodos clásicos de XNA se llamen automaticamente en el orden de los componentes de Game.
 Util para escenarios, textos de gui o debuggin.
@@ -134,14 +118,10 @@ Bubble Message y Rush Message (como los de nikoniko douga)
 spriteManager.Enabled = false; // desactiva update
 spriteManager.Visible = false; // desactiva draw
 
-
-
-Consideracion 10: Shaders
-=========================
+# Consideracion 10: Shaders
 
 http://blog.josack.com/2011/07/my-first-2d-pixel-shaders-part-1.html
 
+# Consideración 11: Camara 2D:
 
-Consideración 11: Camara 2D:
-=============================
-
+// TODO
