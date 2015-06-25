@@ -1,6 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+
+using Helpers;
+
 namespace MonoGame_Helpers
 {
     /// <summary>
@@ -10,7 +13,13 @@ namespace MonoGame_Helpers
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
+
+        #region GameComponents
+
+        DebugOutput debugOutput;
+
+        #endregion
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -26,9 +35,13 @@ namespace MonoGame_Helpers
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            
+            debugOutput = new DebugOutput(this);
+
             graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
-            base.Initialize();
+            Components.Add(debugOutput);
+            debugOutput.Enabled = true;
+            debugOutput.Visible = true;
+            base.Initialize();            
         }
 
         /// <summary>

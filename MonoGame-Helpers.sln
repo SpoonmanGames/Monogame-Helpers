@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame-Helpers.Windows", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame-Helpers.WindowsPhone", "MonoGame-Helpers\MonoGame-Helpers.WindowsPhone\MonoGame-Helpers.WindowsPhone.csproj", "{A89A18C8-D301-4670-8189-A89EBFB8E2AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{D5DB5887-1D18-4086-B7FE-EC53E338E008}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		MonoGame-Helpers\MonoGame-Helpers.Shared\Shared.Application.Shared.projitems*{a89a18c8-d301-4670-8189-a89ebfb8e2ae}*SharedItemsImports = 4
@@ -72,6 +74,16 @@ Global
 		{A89A18C8-D301-4670-8189-A89EBFB8E2AE}.Release|x86.ActiveCfg = Release|x86
 		{A89A18C8-D301-4670-8189-A89EBFB8E2AE}.Release|x86.Build.0 = Release|x86
 		{A89A18C8-D301-4670-8189-A89EBFB8E2AE}.Release|x86.Deploy.0 = Release|x86
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Release|ARM.ActiveCfg = Release|Any CPU
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Release|x64.ActiveCfg = Release|Any CPU
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +92,6 @@ Global
 		{B27BE376-7FB4-413C-BE23-ED0E96AD41F4} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
 		{0A66F3D5-7072-4327-8CB1-867B26589BFD} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
 		{A89A18C8-D301-4670-8189-A89EBFB8E2AE} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
+		{D5DB5887-1D18-4086-B7FE-EC53E338E008} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
 	EndGlobalSection
 EndGlobal
