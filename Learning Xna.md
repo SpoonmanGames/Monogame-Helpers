@@ -4,6 +4,12 @@
 ** Será necesario HLSL Effects ?? (Learning XNA- Pág 265 - Negative, Blur y Grayscale)
 ** Será necesario Particle System ?? (Learning XNA- Pág 299)
 
+# Code Examples útiles
+
+http://xbox.create.msdn.com/en-US/education/catalog/sample/game_state_management
+http://xbox.create.msdn.com/en-US/education/catalog/sample/safe_area
+http://xbox.create.msdn.com/en-US/education/catalog/sample/primitives
+
 
 # EXTRAS
 
@@ -99,6 +105,8 @@ protected override void Initialize()
 	spriteManager = new SpriteManager(this);
 	Components.Add(spriteManager);
 	base.Initialize();
+	spriteManager.Enabled = false; // desactiva update
+	spriteManager.Visible = false; // desactiva draw
 }
 
 Ejemplos:
@@ -115,8 +123,6 @@ Cameras
 Manager de diferentes tipos.
 Bubble Message y Rush Message (como los de nikoniko douga)
 
-spriteManager.Enabled = false; // desactiva update
-spriteManager.Visible = false; // desactiva draw
 
 # Consideracion 10: Shaders
 

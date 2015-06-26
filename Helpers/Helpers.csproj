@@ -38,6 +38,8 @@
     <TargetPlatform Include="Windows, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Polygon\DrawableRectangle.cs" />
+    <Compile Include="Polygon\_2DPrimitiveShapes.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DebugOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -46,7 +48,11 @@
     <Reference Include="MonoGame.Framework">
       <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\WindowsPhone81\MonoGame.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="SharpDX.Direct3D11">
+      <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\WindowsPhone81\SharpDX.Direct3D11.dll</HintPath>
+    </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

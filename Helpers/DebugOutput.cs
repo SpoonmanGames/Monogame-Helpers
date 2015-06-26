@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Helpers.Polygon;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -17,6 +18,8 @@ namespace Helpers
         SpriteFont debug_font;
         string frame_rates;
 
+        DrawableRectangle rectangle;
+
         public DebugOutput(Game game)
             : base(game)
         {
@@ -25,7 +28,8 @@ namespace Helpers
 
         public override void Initialize()
         {
-            this.frame_rates = "TESTING GAME COMPONETS";//string.Empty;
+            this.frame_rates = string.Empty;
+            this.rectangle = new DrawableRectangle(new Rectangle(10, 10, 100, 100));
 
             base.Initialize();
         }
@@ -39,6 +43,7 @@ namespace Helpers
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             debug_font = content.Load<SpriteFont>("Fonts/DebugFont");
+            this.rectangle.LoadContent(GraphicsDevice);
 
             base.LoadContent();
         }
@@ -53,6 +58,8 @@ namespace Helpers
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+
+            frame_rates = string.Format("FPS: {0}", 1000 / gameTime.ElapsedGameTime.Milliseconds);
         }
 
         public override void Draw(GameTime gameTime)
@@ -62,6 +69,7 @@ namespace Helpers
             spriteBatch.Begin();
 
             spriteBatch.DrawString(debug_font, frame_rates, new Vector2(Game.Window.ClientBounds.Width / 2, Game.Window.ClientBounds.Height / 2), Color.Black);
+            rectangle.Draw(gameTime, spriteBatch);
 
             spriteBatch.End();
         }
