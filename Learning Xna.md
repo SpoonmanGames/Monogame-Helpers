@@ -13,10 +13,9 @@ http://xbox.create.msdn.com/en-US/education/catalog/sample/primitives
 
 # EXTRAS
 
-Game.Window.ClientBounds
-	Accede a los limites de la pantall
-usar 'enum' para estados:
-	enum GameState { Start, InGame, GameOver };
+* Game.Window.ClientBounds: Accede a los limites de la pantall
+* usar 'enum' para estados:	enum GameState { Start, InGame, GameOver };
+* Dibujar triangulos: http://www.gdchaos.net/node/136
 
 # Helpers para MonoGame
 

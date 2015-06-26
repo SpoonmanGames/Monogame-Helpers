@@ -29,7 +29,7 @@ namespace Helpers
         public override void Initialize()
         {
             this.frame_rates = string.Empty;
-            this.rectangle = new DrawableRectangle(new Rectangle(10, 10, 100, 100));
+            this.rectangle = new DrawableRectangle(new Vector2(50, 50), new Vector2(200, 200));
 
             base.Initialize();
         }
