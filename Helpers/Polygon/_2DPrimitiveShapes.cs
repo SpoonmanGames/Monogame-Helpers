@@ -6,24 +6,14 @@ namespace Helpers.Polygon
     public abstract class _2DPrimitiveShapes
     {
         public Texture2D Texture { get; set; }
-        public Rectangle Rectangle { get; set; }
-        public int Width { get { return this.Rectangle.Width; } }
-        public int Height { get { return this.Rectangle.Height; } }
         public Color Color { get; set; }
+        public float Alpha { get; set; }
 
         #region Constructor
 
-        public _2DPrimitiveShapes(Rectangle rectangle, Color color){ this.Rectangle = rectangle; this.Color = color; }
+        public _2DPrimitiveShapes(Color color) { this.Texture = null; this.Color = color; this.Alpha = 1.0f; }
 
-        public _2DPrimitiveShapes(Point posicion, Point tamano, Color color) { this.Rectangle = new Rectangle(posicion, tamano); this.Color = color; }
-
-        public _2DPrimitiveShapes(int x, int y, int width, int height, Color color) { this.Rectangle = new Rectangle(x, y, width, height); this.Color = color; }
-
-        public _2DPrimitiveShapes(Rectangle rectangle) : this(rectangle, Color.Black){ }
-
-        public _2DPrimitiveShapes(Point posicion, Point tamano) : this(posicion, tamano, Color.Black) { }
-
-        public _2DPrimitiveShapes(int x, int y, int width, int height) : this(x, y, width, height, Color.Black) { }
+        public _2DPrimitiveShapes() : this(Color.Black) { }
 
         #endregion
 
