@@ -38,12 +38,14 @@
     <TargetPlatform Include="Windows, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DebugOutput\DebugBox.cs" />
+    <Compile Include="ExtensionMethods\Vector2Ext.cs" />
     <Compile Include="Polygon\DrawableLine.cs" />
     <Compile Include="Polygon\DrawablePoint.cs" />
     <Compile Include="Polygon\DrawableRectangle.cs" />
     <Compile Include="Polygon\_2DPrimitiveShapes.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="DebugOutput.cs" />
+    <Compile Include="DebugOutput\DebugOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

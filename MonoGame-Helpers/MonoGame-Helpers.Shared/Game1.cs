@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-using Helpers;
+using Helpers.DebugOutput;
 
 namespace MonoGame_Helpers
 {
