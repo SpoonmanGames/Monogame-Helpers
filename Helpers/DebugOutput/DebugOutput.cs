@@ -22,15 +22,6 @@ namespace Helpers.DebugOutput
         private DebugBox fpsBox;
         private DebugBox resolutionBox;
 
-        #region Object Counter
-
-        #endregion
-
-        #region Assets Counter
-
-        #endregion
-
-
         public DebugOutput(Game game)
             : base(game) { }
 
@@ -46,10 +37,10 @@ namespace Helpers.DebugOutput
             spriteBatch = new SpriteBatch(GraphicsDevice);
             debug_font = content.Load<SpriteFont>("Fonts/DebugFont");
 
-            this.fpsBox = new DebugBox(new Vector2(10, 10), debug_font, true, "FPS: 60");
+            this.fpsBox = new DebugBox(new Vector2(10, 10), debug_font, true);
             this.fpsBox.LoadContent(GraphicsDevice);
 
-            this.resolutionBox = new DebugBox(new Vector2(Game.Window.ClientBounds.Width - 10, 10), debug_font, false, "Resolution:","1920x1080");
+            this.resolutionBox = new DebugBox(new Vector2(Game.Window.ClientBounds.Width - 10, 10), debug_font, false);
             this.resolutionBox.LoadContent(GraphicsDevice);
 
             base.LoadContent();

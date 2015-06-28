@@ -28,7 +28,14 @@ namespace Helpers.DebugOutput
             this.Font = font;
             this.left_corner = left_corner;
             this.msg_bounds = Vector2.Zero;
-            this.messages = messages.ToList();          
+
+            if (messages.Length > 0)
+                this.messages = messages.ToList();
+            else
+            {
+                this.messages = new List<string>();
+                this.messages.Add(string.Empty);
+            }                
         }
 
         public void LoadContent(GraphicsDevice graphicsDevice)
@@ -58,6 +65,9 @@ namespace Helpers.DebugOutput
 
                 this.msg_bounds.X = this.messages.Max(s => this.Font.MeasureString(s).X);
                 this.msg_bounds.Y = this.Font.MeasureString(this.messages[0]).Y;
+
+                if (!this.left_corner)
+                    this.rect_position = this.rect_position - new Vector2(this.msg_bounds.X + 10, 0);
 
                 this.rect_background.Update(new Rectangle(
                     (int)this.rect_position.X,
