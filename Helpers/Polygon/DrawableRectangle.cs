@@ -40,6 +40,12 @@ namespace Helpers.Polygon
                 base.LoadContent(graphicsDevice);
         }
 
+        public void Update(Rectangle rectangle) { this.rectangle = rectangle; }
+
+        public void Update(Vector2 position, int weigth, int height) { this.rectangle = new Rectangle((int)position.X, (int)position.Y, weigth, height); }
+
+        public void Update(Vector2 X, Vector2 Y) { this.linebase_rectangle.Update(X, Y); }
+
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             if (this.isLinebase)

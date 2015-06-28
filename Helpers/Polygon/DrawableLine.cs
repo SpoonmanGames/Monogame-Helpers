@@ -26,8 +26,15 @@ namespace Helpers.Polygon
         {
             base.LoadContent(graphicsDevice);
 
-            this.size = Vector2.Distance(from, to);
-            this.angle = (float)Math.Atan2(to.Y - from.Y, to.X - from.X);
+            this.size = Vector2.Distance(this.from, this.to);
+            this.angle = (float)Math.Atan2(this.to.Y - this.from.Y, this.to.X - this.from.X);
+        }
+
+        public void Update(Vector2 from, Vector2 to)
+        {
+            this.from = from; this.to = to;
+            this.size = Vector2.Distance(this.from, this.to);
+            this.angle = (float)Math.Atan2(this.to.Y - this.from.Y, this.to.X - this.from.X);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

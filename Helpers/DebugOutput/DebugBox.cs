@@ -50,7 +50,23 @@ namespace Helpers.DebugOutput
 
         public void Update(params string[] messages)
         {
-            this.messages = messages.ToList();
+            List<string> input_msgs = messages.ToList();
+
+            if (!Enumerable.SequenceEqual(this.messages, input_msgs))
+            {
+                this.messages = input_msgs;
+
+                this.msg_bounds.X = this.messages.Max(s => this.Font.MeasureString(s).X);
+                this.msg_bounds.Y = this.Font.MeasureString(this.messages[0]).Y;
+
+                this.rect_background.Update(new Rectangle(
+                    (int)this.rect_position.X,
+                    (int)this.rect_position.Y,
+                    (int)this.msg_bounds.X + POS_OFFSET,
+                    (int)(this.messages.Count * (LINE_SPACING + this.msg_bounds.Y) - LINE_SPACING + POS_OFFSET)
+                    )
+                );                
+            }
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
