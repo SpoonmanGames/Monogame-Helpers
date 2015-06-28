@@ -17,10 +17,10 @@ namespace Helpers.DebugOutput
         private SpriteBatch spriteBatch;
         private SpriteFont debug_font;
 
-        private RenderTarget2D rectangles;
-
         private DebugBox fpsBox;
         private DebugBox resolutionBox;
+        private DebugBox objectCounterBox;
+        private DebugBox assetCounterBox;
 
         public DebugOutput(Game game)
             : base(game) { }
@@ -43,6 +43,12 @@ namespace Helpers.DebugOutput
             this.resolutionBox = new DebugBox(new Vector2(Game.Window.ClientBounds.Width - 10, 10), debug_font, false);
             this.resolutionBox.LoadContent(GraphicsDevice);
 
+            this.objectCounterBox = new DebugBox(new Vector2(Game.Window.ClientBounds.Width - 10, Game.Window.ClientBounds.Height - 10), debug_font, false);
+            this.objectCounterBox.LoadContent(GraphicsDevice);
+
+            this.assetCounterBox = new DebugBox(new Vector2(10, Game.Window.ClientBounds.Height - 10), debug_font, true);
+            this.assetCounterBox.LoadContent(GraphicsDevice);
+
             base.LoadContent();
         }
 
@@ -57,11 +63,10 @@ namespace Helpers.DebugOutput
         {
             base.Update(gameTime);
 
-            // Capturando datos para FPS
             this.fpsBox.Update(string.Format("FPS: {0}", 1000 / gameTime.ElapsedGameTime.Milliseconds));
-
-            // Capturando datos para Resolution
             this.resolutionBox.Update("Resolution",string.Format("{0}x{1}", Game.Window.ClientBounds.Width, Game.Window.ClientBounds.Height));
+            this.objectCounterBox.Update(string.Format("Objetos: {0}", 0));
+            this.assetCounterBox.Update(string.Format("Assets: {0}", 0));
         }
 
         public override void Draw(GameTime gameTime)
@@ -70,11 +75,10 @@ namespace Helpers.DebugOutput
 
             spriteBatch.Begin();
 
-            // Dibujando FPS
             this.fpsBox.Draw(gameTime, spriteBatch);
-
-            // Dibujando Resolution
             this.resolutionBox.Draw(gameTime, spriteBatch);
+            this.objectCounterBox.Draw(gameTime, spriteBatch);
+            this.assetCounterBox.Draw(gameTime, spriteBatch);
 
             spriteBatch.End();
         }
