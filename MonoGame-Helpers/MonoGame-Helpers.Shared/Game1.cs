@@ -2,8 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-using Helpers.DebugOutput;
-
 namespace MonoGame_Helpers
 {
     /// <summary>
@@ -11,12 +9,22 @@ namespace MonoGame_Helpers
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        GraphicsDeviceManager graphics;        
+
+        /**
+         * Arreglo para cargar cualquier asset de GUI (Graphical User Interface) de forma previa
+         * Esto evita glitches cuando se cargan repentinamente
+         * Aquí se debiera cargar todo lo que hace referencia a GUI
+         */
+        static readonly string[] preloadAssets =
+        {
+            "Gradientes/PopupGradient",
+        };
 
         #region GameComponents
-
-        DebugOutput debugOutput;
+        
+        ScreenManager.ScreenManager screenManager;
+        Helpers.DebugOutput.DebugOutput debugOutput;
 
         #endregion
 
@@ -34,13 +42,23 @@ namespace MonoGame_Helpers
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-            debugOutput = new DebugOutput(this);
+            // TODO: Add your initialization logic here            
+            this.graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
+            this.Window.AllowUserResizing = false;
 
-            graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
-            Components.Add(debugOutput);
+            screenManager = new ScreenManager.ScreenManager(this);
+            screenManager.Enabled = true;
+            screenManager.Visible = true;
+
+            debugOutput = new Helpers.DebugOutput.DebugOutput(this);
             debugOutput.Enabled = true;
             debugOutput.Visible = true;
+
+            Components.Add(screenManager);
+            Components.Add(debugOutput);
+
+            screenManager.AddScreen(new TitleScreen("Monogame Helpers"), null);
+
             base.Initialize();            
         }
 
@@ -50,10 +68,10 @@ namespace MonoGame_Helpers
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            foreach (string asset in preloadAssets)
+            {
+                Content.Load<object>(asset);
+            }
         }
 
         /// <summary>
@@ -65,18 +83,6 @@ namespace MonoGame_Helpers
             // TODO: Unload any non ContentManager content here
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Update(GameTime gameTime)
-        {
-            // TODO: Add your update logic here
-
-
-            base.Update(gameTime);
-        }
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -85,8 +91,6 @@ namespace MonoGame_Helpers
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your draw logic here
 
             base.Draw(gameTime);
         }

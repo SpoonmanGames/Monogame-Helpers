@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame-Helpers.WindowsPho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{D5DB5887-1D18-4086-B7FE-EC53E338E008}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenManager", "..\MonoGameScreenManager\ScreenManager.csproj", "{229BE11C-23F3-43F9-A657-2C6F4FA135EA}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		MonoGame-Helpers\MonoGame-Helpers.Shared\Shared.Application.Shared.projitems*{a89a18c8-d301-4670-8189-a89ebfb8e2ae}*SharedItemsImports = 4
@@ -84,6 +86,16 @@ Global
 		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Release|ARM.ActiveCfg = Release|Any CPU
 		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Release|x64.ActiveCfg = Release|Any CPU
 		{D5DB5887-1D18-4086-B7FE-EC53E338E008}.Release|x86.ActiveCfg = Release|Any CPU
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Release|ARM.ActiveCfg = Release|Any CPU
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Release|x64.ActiveCfg = Release|Any CPU
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +105,6 @@ Global
 		{0A66F3D5-7072-4327-8CB1-867B26589BFD} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
 		{A89A18C8-D301-4670-8189-A89EBFB8E2AE} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
 		{D5DB5887-1D18-4086-B7FE-EC53E338E008} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
+		{229BE11C-23F3-43F9-A657-2C6F4FA135EA} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
 	EndGlobalSection
 EndGlobal

@@ -130,6 +130,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MonoGameScreenManager\ScreenManager.csproj">
+      <Project>{229be11c-23f3-43f9-a657-2c6f4fa135ea}</Project>
+      <Name>ScreenManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Helpers\Helpers.csproj">
       <Project>{d5db5887-1d18-4086-b7fe-ec53e338e008}</Project>
       <Name>Helpers</Name>

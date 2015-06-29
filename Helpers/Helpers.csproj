@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DebugOutput\DebugBox.cs" />
+    <Compile Include="DebugOutput\DebugObject.cs" />
     <Compile Include="ExtensionMethods\Vector2Ext.cs" />
     <Compile Include="Polygon\DrawableLine.cs" />
     <Compile Include="Polygon\DrawablePoint.cs" />

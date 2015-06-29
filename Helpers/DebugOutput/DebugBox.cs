@@ -10,7 +10,7 @@ using Helpers.ExtensionMethods.Vector2Ext;
 
 namespace Helpers.DebugOutput
 {
-    class DebugBox
+    public class DebugBox
     {
         private List<string> messages;
         private DrawableRectangle rect_background;
@@ -39,6 +39,7 @@ namespace Helpers.DebugOutput
             }                
         }
 
+        [System.Diagnostics.Conditional("DEBUG")]
         public void LoadContent(GraphicsDevice graphicsDevice, Rectangle ClientBounds)
         {
             this.ClientBounds = ClientBounds;
@@ -62,6 +63,7 @@ namespace Helpers.DebugOutput
             this.rect_background.LoadContent(graphicsDevice);
         }
 
+        [System.Diagnostics.Conditional("DEBUG")]
         public void Update(params string[] messages)
         {
             List<string> input_msgs = messages.ToList();
@@ -91,6 +93,7 @@ namespace Helpers.DebugOutput
             }
         }
 
+        [System.Diagnostics.Conditional("DEBUG")]
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             this.rect_background.Draw(gameTime, spriteBatch);

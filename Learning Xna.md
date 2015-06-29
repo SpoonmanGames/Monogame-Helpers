@@ -13,25 +13,17 @@ http://xbox.create.msdn.com/en-US/education/catalog/sample/primitives
 
 # EXTRAS
 
-* Game.Window.ClientBounds: Accede a los limites de la pantall
+* Game.Window.ClientBounds: Accede a los limites de la pantalla
 * usar 'enum' para estados:	enum GameState { Start, InGame, GameOver };
 * Dibujar triangulos: http://www.gdchaos.net/node/136
-
-# Helpers para MonoGame
-
-Lista de helpers desde Learning XNA 4.0
-
-# Consideración 1: Extensiones
-
-Ejemplo de extensión
-
-public static class PointExt
-{
-    public static Vector2 ToVector2(this Point point)
-    {
-        return new Vector2(point.X, point.Y);
-    }
-}
+* Ejemplo de extensión:
+	public static class PointExt
+	{
+	    public static Vector2 ToVector2(this Point point)
+	    {
+	        return new Vector2(point.X, point.Y);
+	    }
+	}
 
 
 # Consideración 2: Crear algo que fácilmente permita crear animaciones
@@ -110,17 +102,18 @@ protected override void Initialize()
 
 Ejemplos:
 
-Game State/Screen Managers
+Game State
+/ Screen Managers
 ParticleEmitters
-Drawable primitives
-AI controllers
+/ Drawable primitives
+x AI controllers
 Input controllers
 Animation controllers
 Billboards
 Physics & Collision Managers
 Cameras
-Manager de diferentes tipos.
 Bubble Message y Rush Message (como los de nikoniko douga)
+etc ~ Manager de diferentes tipos.
 
 
 # Consideracion 10: Shaders
@@ -130,3 +123,24 @@ http://blog.josack.com/2011/07/my-first-2d-pixel-shaders-part-1.html
 # Consideración 11: Camara 2D:
 
 // TODO
+
+# Consideracion 12: Controles
+
+Vector3 positionToAdd = Vector3.Zero;
+Keys[] currentPressedKeys = currentKeyboardState.GetPressedKeys();
+foreach( Keys key in currentPressedKeys )
+{
+    if( key == Keys.W )
+        positionToAdd += Vector3( 0.0f, 1.0f, 0.0f );
+
+    if( key == Keys.S )
+        positionToAdd += Vector3( 0.0f, -1.0f, 0.0f );
+
+    if( key == Keys.A )
+        positionToAdd += Vector3( -1.0f, 0.0f, 0.0f );
+
+    if( key == Keys.D )
+        positionToAdd += Vector3( 1.0f, 0.0f, 0.0f );
+}
+
+player.Position += positionToAdd;
