@@ -15,7 +15,14 @@ namespace MonoGame_Helpers
         public TitleScreen(string titulo)
             : base(titulo)
         {
-            
+            MenuEntry menu = new MenuEntry(this, "Salto Vertical");
+            menu.Selected += SaltoVerticalSelected;
+            MenuEntries.Add(menu);
+        }
+
+        void SaltoVerticalSelected(object sender, PlayerIndexEventArgs e)
+        {
+            ScreenManagerController.AddScreen(new PantallaSaltoVertical(), e.PlayerIndex);
         }
 
         #endregion

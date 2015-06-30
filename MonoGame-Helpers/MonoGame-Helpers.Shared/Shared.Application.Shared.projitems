@@ -25,6 +25,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PantallaSaltoVertical.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TitleScreencs.cs" />
   </ItemGroup>
   <ItemGroup>
