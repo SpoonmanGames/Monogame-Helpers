@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame-Helpers.WindowsPho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{D5DB5887-1D18-4086-B7FE-EC53E338E008}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenManager", "..\MonoGameScreenManager\ScreenManager.csproj", "{229BE11C-23F3-43F9-A657-2C6F4FA135EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenManager", "MonoGame-ScreenManager\ScreenManager.csproj", "{229BE11C-23F3-43F9-A657-2C6F4FA135EA}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
