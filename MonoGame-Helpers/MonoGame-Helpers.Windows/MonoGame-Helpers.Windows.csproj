@@ -130,6 +130,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DebugManager\DebugManager.csproj">
+      <Project>{728d7e10-ddff-4d90-b828-bc3fd2935a6a}</Project>
+      <Name>DebugManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Helpers\Helpers.csproj">
       <Project>{d5db5887-1d18-4086-b7fe-ec53e338e008}</Project>
       <Name>Helpers</Name>

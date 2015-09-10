@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenManager", "MonoGame-ScreenManager\ScreenManager.csproj", "{229BE11C-23F3-43F9-A657-2C6F4FA135EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugManager", "DebugManager\DebugManager.csproj", "{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		MonoGame-Helpers\MonoGame-Helpers.Shared\Shared.Application.Shared.projitems*{a89a18c8-d301-4670-8189-a89ebfb8e2ae}*SharedItemsImports = 4
@@ -96,6 +98,16 @@ Global
 		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Release|ARM.ActiveCfg = Release|Any CPU
 		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Release|x64.ActiveCfg = Release|Any CPU
 		{229BE11C-23F3-43F9-A657-2C6F4FA135EA}.Release|x86.ActiveCfg = Release|Any CPU
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}.Release|ARM.ActiveCfg = Release|Any CPU
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}.Release|x64.ActiveCfg = Release|Any CPU
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,5 +118,6 @@ Global
 		{A89A18C8-D301-4670-8189-A89EBFB8E2AE} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
 		{D5DB5887-1D18-4086-B7FE-EC53E338E008} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
 		{229BE11C-23F3-43F9-A657-2C6F4FA135EA} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
+		{728D7E10-DDFF-4D90-B828-BC3FD2935A6A} = {E783996E-509F-4EA8-8317-5A51F26D19E1}
 	EndGlobalSection
 EndGlobal

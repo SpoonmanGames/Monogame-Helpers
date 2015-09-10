@@ -9,7 +9,7 @@ namespace MonoGame_Helpers
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;        
+        GraphicsDeviceManager graphics;
 
         /**
          * Arreglo para cargar cualquier asset de GUI (Graphical User Interface) de forma previa
@@ -24,14 +24,14 @@ namespace MonoGame_Helpers
         #region GameComponents
         
         ScreenManager.ScreenManager screenManager;
-        Helpers.DebugOutput.DebugOutput debugOutput;
+        DebugManager.DebugManager debugManager;
 
         #endregion
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+            Content.RootDirectory = "Content";            
         }
 
         /// <summary>
@@ -44,22 +44,22 @@ namespace MonoGame_Helpers
         {
             // TODO: Add your initialization logic here            
             this.graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
-            this.Window.AllowUserResizing = false;
 
             screenManager = new ScreenManager.ScreenManager(this);
             screenManager.Enabled = true;
             screenManager.Visible = true;
-
-            debugOutput = new Helpers.DebugOutput.DebugOutput(this);
-            debugOutput.Enabled = true;
-            debugOutput.Visible = true;
-
             Components.Add(screenManager);
-            Components.Add(debugOutput);
 
+#if DEBUG
+            debugManager = new DebugManager.DebugManager(this);
+            debugManager.Enabled = true;
+            debugManager.Visible = true;            
+            Components.Add(debugManager);
+#endif
+            
             screenManager.AddScreen(new TitleScreen("Monogame Helpers"), null);
 
-            base.Initialize();            
+            base.Initialize();
         }
 
         /// <summary>
@@ -73,16 +73,6 @@ namespace MonoGame_Helpers
                 Content.Load<object>(asset);
             }
         }
-
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// game-specific content.
-        /// </summary>
-        protected override void UnloadContent()
-        {
-            // TODO: Unload any non ContentManager content here
-        }
-
 
         /// <summary>
         /// This is called when the game should draw itself.

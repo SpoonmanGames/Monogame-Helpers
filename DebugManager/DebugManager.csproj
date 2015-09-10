@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D5DB5887-1D18-4086-B7FE-EC53E338E008}</ProjectGuid>
+    <ProjectGuid>{728D7E10-DDFF-4D90-B828-BC3FD2935A6A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Helpers</RootNamespace>
-    <AssemblyName>Helpers</AssemblyName>
+    <RootNamespace>DebugManager</RootNamespace>
+    <AssemblyName>DebugManager</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,28 +34,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
-    <TargetPlatform Include="Windows, Version=8.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ExtensionMethods\RectangleExt.cs" />
-    <Compile Include="ExtensionMethods\Vector2Ext.cs" />
-    <Compile Include="InputState.cs" />
-    <Compile Include="Polygon\DrawableLine.cs" />
-    <Compile Include="Polygon\DrawablePoint.cs" />
-    <Compile Include="Polygon\DrawableRectangle.cs" />
-    <Compile Include="Polygon\_2DPrimitiveShapes.cs" />
+    <Compile Include="DebugManager.cs" />
+    <Compile Include="Outputs\DebugBox.cs" />
+    <Compile Include="Outputs\DebugMessage.cs" />
+    <Compile Include="Outputs\DebugObject.cs" />
+    <Compile Include="Outputs\DebugOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
       <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\WindowsPhone81\MonoGame.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="SharpDX.Direct3D11">
-      <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\WindowsPhone81\SharpDX.Direct3D11.dll</HintPath>
-    </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <TargetPlatform Include="Windows, Version=8.1" />
+    <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{d5db5887-1d18-4086-b7fe-ec53e338e008}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

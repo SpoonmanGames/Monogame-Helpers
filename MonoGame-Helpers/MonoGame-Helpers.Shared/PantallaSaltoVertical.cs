@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Helpers.Polygon;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -10,23 +11,27 @@ using System.Text;
 
 namespace MonoGame_Helpers
 {
-    class PantallaSaltoVertical:GameScreen
+    class PantallaSaltoVertical : GameScreen
     {
         ContentManager content;
         SpriteFont gameFont;
-        SpriteBatch spriteBatch;
-        Texture2D bola;
+
+        private Texture2D bola;
         //posicion  de la bola en (x,y)
-        Vector2 bolapos = Vector2.Zero;
-        
+
+        private Vector2 bolapos = Vector2.Zero;
+        public DrawableRectangle Test { get { return test; } set { test = value; } }
+        private DrawableRectangle test;
 
         public override void LoadContent()
         {
+            base.LoadContent();
+
             if (content == null)
                 content = new ContentManager(ScreenManagerController.Game.Services, "Content");
 
             bola = content.Load<Texture2D>("Texturas/ball");
-
+            gameFont = content.Load<SpriteFont>("Fonts/gameFont");
 
 
 
@@ -68,22 +73,17 @@ namespace MonoGame_Helpers
             }
             base.Update(gameTime, otherScreenHasFocus, false);
         }
-
-
+        
         public override void Draw(Microsoft.Xna.Framework.GameTime gameTime)
         {
             SpriteBatch spriteBatch = ScreenManagerController.SpriteBatch;
             
             spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
+
+            base.Draw(gameTime);
             spriteBatch.Draw(bola, bolapos, Color.White);
+
             spriteBatch.End();
         }
-
-        public override void HandleInput(InputState input)
-        {
-            
-        }
-
-
     }
 }
